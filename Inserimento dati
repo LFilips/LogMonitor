@@ -1,0 +1,19 @@
+
+
+public class InserimentoDati {
+
+	
+	
+	public static void main(String []args){
+		
+		System.out.println("inizio lo storage nel database");
+		@SuppressWarnings("unused")
+		Store store=new Store();
+	
+		/*
+		 * Creazione di oggetto Store, avvia un thread e inizia lo storage dei dati nel Db.
+		 */
+	
+		
+	}
+}
