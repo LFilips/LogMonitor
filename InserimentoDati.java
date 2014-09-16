@@ -11,7 +11,7 @@ public class InserimentoDati {
 		Store store=new Store();
 	
 		/*
-		 * Creazione di oggetto Store, avvia un thread e inizia lo storage dei dati nel Db.
+		 * Creating a store object
 		 */
 	
 		

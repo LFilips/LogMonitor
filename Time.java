@@ -29,7 +29,7 @@ public class Time {
 			return timestamp;
 		} catch (ParseException e) {
 			e.printStackTrace();
-			System.out.println("errore nel parsing della data, il formato deve essere dd/MM/yy HH:mm:ss:SS");
+			System.out.println("Error parsing data, format should be dd/MM/yy HH:mm:ss:SS");
 			return 0;
 		}
 		

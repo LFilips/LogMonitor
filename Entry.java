@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class Entry {
 /* 
- * Oggetto che rappresenta una tupla della tabella hdtb
+ * Object for represente an entry of the table
  */
 	  private long probeID;
 	  private String identification;
@@ -29,7 +29,7 @@ public class Entry {
 	}
 	
 	
-	//metodi di set dei valori
+	//set method
 	protected void setIdentification(String identification){
 		this.identification=identification;
 	}
@@ -59,7 +59,7 @@ public class Entry {
 	}
 	
 	
-	//metodi di ritorno dei valori
+	//get method
 	protected String getIdentification(){
 		return this.identification;
 	}
@@ -95,7 +95,7 @@ public class Entry {
 	
 	public String toString(){
 		/*
-		 * In questo metodo stampo anche tutta la lista dei Measurement , rallenta notevolmente l'esecuzione del programma
+		 * Print all the measurement list
 		 */
 		String lista="";
 		Iterator<Measurement> it=lista_attributi.listIterator();

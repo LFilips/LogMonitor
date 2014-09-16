@@ -19,19 +19,19 @@ import java.util.StringTokenizer;
 
 public class Store implements Runnable {
 /*
- * Classe che si occupa dell'inserimento delle misurazioni all'interno del database
+ * Class that insert measurement inside DB
  */
 	
 	  /*
-	   * Stringhe necessarie per il collegamento con il database , i valori di queste variabili vengono presi
-	   * da un file di configurazione esterno , vale anche per timeout e per directory
+	   * Connection with DB, loaded from external configuration file
+	   *
 	   */
 	  private static String dbClassName ;
 	  private static String CONNECTION ;
 	  
 	  
-	  private static long timeout;//la uso per determinare ogni qanto tempo deve attivarsi l'inserimento dei file
-	  private static String directory;//direttorio dove si trovano i file da processare inserito sempre in configurazione
+	  private static long timeout;
+	  private static String directory;
 	  private static Connection c;
 	  private final static String user="user";
 	  private final static String pass="password";
@@ -46,7 +46,7 @@ public class Store implements Runnable {
 	  public Store(){
 		  
 		  /*
-		   * Avvio del thread
+		   * Thread run
 		   */
 	
 	    Thread thread = new Thread(this,"Store");
@@ -59,8 +59,8 @@ public class Store implements Runnable {
 	    public void run(){
 	    
 	    	/*
-	    	 * carico da un file di configurazione i valori delle variabili statiche
-	    	 * e mi connetto al database
+	    	 * Load parameters from config file
+	    	 *
 	    	 */
 	    	
 	    	loadParametersFromRegistry();
@@ -77,15 +77,15 @@ public class Store implements Runnable {
 			}
 
 		   
-		    /*	Properties serve per la connessione con il database nel caso
-		     *  siano necessari user e password
-		     */
+
+
+
 			Properties p = new Properties();
 		    p.put(user,userName);
 		    p.put(pass,password);
 
 		    
-		    c=null;//dichiarata a null poichè essendo in seguito in un blocco try catch dopo non era inizializzata
+		    c=null;
 		    
 		    
 			try {
@@ -95,7 +95,7 @@ public class Store implements Runnable {
 				e.printStackTrace();
 			}
 		   
-		    System.out.println("Connessione al database,inizia l'inserimento delle misurazioni");
+		    System.out.println("Connecting to DB, startin measurement:");
 		    
 		 
 	    while(true){
@@ -104,7 +104,7 @@ public class Store implements Runnable {
 					Thread.sleep(timeout);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
-			}//qui è terminato lo sleep adesso il thread analizza il file e lo mette nel db
+			}
 			try {
 				System.out.println("Running Store");
 				File active_folder = new File(directory);
